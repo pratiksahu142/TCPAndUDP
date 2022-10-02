@@ -1,7 +1,6 @@
 package server;
 
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 
@@ -16,8 +15,9 @@ public class ServerApp {
   public static void main(String[] args) throws IOException, IllegalArgumentException {
     logger.info("ServerApp started ...");
     logger.info("Arguments received :");
-    for(String arg:args)
+    for (String arg : args) {
       logger.info(arg + "\n");
+    }
     int port = Integer.parseInt(args[0]);
     String protocol = args[1];
 //    Scanner sc = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class ServerApp {
     server.createServer(port);
     while (true) {
       String request = server.receiveRequest().trim();
-      if(request.contains("wait")){
+      if (request.contains("wait")) {
         try {
           Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -56,7 +56,8 @@ public class ServerApp {
     }
   }
 
-  private static boolean validateMalformedRequest(Server server, String request) throws IOException {
+  private static boolean validateMalformedRequest(Server server, String request)
+      throws IOException {
     if (request.equals(MALFORMED)) {
       logger.warning(
           "Invalid request sent by client at address \"" + server.getClientAddress() + ":"
@@ -85,7 +86,7 @@ public class ServerApp {
         server.closeConnections();
         break;
       }
-      if(request.contains("wait")){
+      if (request.contains("wait")) {
         try {
           Thread.sleep(5000);
         } catch (InterruptedException e) {

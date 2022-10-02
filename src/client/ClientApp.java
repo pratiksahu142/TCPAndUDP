@@ -95,8 +95,9 @@ public class ClientApp {
         break;
       }
     }
-    if(!client.isAlive())
+    if (!client.isAlive()) {
       return;
+    }
     client.sendRequest(EXIT);
     client.closeConnections();
   }

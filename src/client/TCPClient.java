@@ -29,7 +29,7 @@ public class TCPClient extends AbstractClient {
 
   @Override
   public void createConnection(String host, int port) throws IOException {
-    System.out.println("Server ip : "+InetAddress.getByName(host).toString());
+    System.out.println("Server ip : " + InetAddress.getByName(host).toString());
     socket = new Socket(InetAddress.getByName(host), port);
     socket.setSoTimeout(5000);
     dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));

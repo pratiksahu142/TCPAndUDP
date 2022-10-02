@@ -7,7 +7,6 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.time.Instant;
 import java.util.logging.Logger;
 
 /*
@@ -21,9 +20,8 @@ import java.util.logging.Logger;
 
 public class UDPClient extends AbstractClient {
 
-  private boolean IS_ALIVE = false;
-
   private static final Logger logger = Logger.getLogger(UDPClient.class.getName());
+  private boolean IS_ALIVE = false;
   private DatagramSocket socket;
   private InetAddress host;
   private int port;
@@ -45,7 +43,7 @@ public class UDPClient extends AbstractClient {
   }
 
   @Override
-  public String receiveReply() throws IOException, SocketTimeoutException {
+  public String receiveReply() throws IOException {
     byte[] msg = new byte[1000];
     DatagramPacket reply = new DatagramPacket(msg, msg.length);
     socket.receive(reply);
