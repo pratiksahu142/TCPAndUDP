@@ -3,7 +3,10 @@ package server;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-
+/**
+ * Represents the driver application for server implementation that handles working of server with
+ * TCP and UDP both the protocols.
+ */
 public class ServerApp {
 
   public static final Logger logger = Logger.getLogger(ServerApp.class.getName());
@@ -20,6 +23,7 @@ public class ServerApp {
     }
     int port = Integer.parseInt(args[0]);
     String protocol = args[1];
+    //Below code is commented out to help close server for scenarios where client is unable to connect and server keeps on waiting indefinitely
 //    Scanner sc = new Scanner(System.in);
 //    String ask = sc.nextLine().trim();
 //    if(ask.equals(EXIT))

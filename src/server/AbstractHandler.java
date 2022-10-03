@@ -2,6 +2,10 @@ package server;
 
 import java.util.logging.Logger;
 
+/**
+ * Abstraction class for {@link Server} interface containing common implementation methods for both
+ * TCP and UDP server implementations.
+ */
 public abstract class AbstractHandler implements Server {
 
   private static final String PUT = "PUT";

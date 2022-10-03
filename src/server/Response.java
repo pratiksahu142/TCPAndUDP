@@ -1,5 +1,8 @@
 package server;
 
+/**
+ * Represents utility class to prepare results to be sent to the client.
+ */
 public class Response {
 
   public static final String INSERTED = "Successful new insertion!";

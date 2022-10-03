@@ -5,20 +5,14 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.logging.Logger;
 
 /*
- * DatagramSocket
- * DatagramPacket(byte[], int length, InetAddress,int serverport )
- * socket.send(DatagramPacket)
- * new DatagramPacket(byte[], int length)
- * socket.receive(Datagram)
- * socket.close()
+ * Represents implementation of Client in UDP protocol.
  * */
 
-public class UDPClient extends AbstractClient {
+public class UDPClient implements Client {
 
   private static final Logger logger = Logger.getLogger(UDPClient.class.getName());
   private boolean IS_ALIVE = false;

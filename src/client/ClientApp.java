@@ -8,6 +8,10 @@ import java.net.SocketTimeoutException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+/**
+ * Represents the driver application for client implementation that handles working of client with
+ * TCP and UDP both the protocols.
+ */
 public class ClientApp {
 
   public static final Logger logger = Logger.getLogger(ClientApp.class.getName());
@@ -18,6 +22,14 @@ public class ClientApp {
       "What operation do you want to do?" + "\nPUT:<key>:<value>" + "\nGET:<key>"
           + "\nDELETE:<key>\n";
 
+  /**
+   * Main driver method that invokes client and drives it.
+   *
+   * @param args contains ip address of server, port of server and protocol to be invoked separated
+   *             by space.
+   * @throws IllegalArgumentException if any of the above are not present as arguments
+   * @throws IOException              if connection disrupts
+   */
   public static void main(String[] args) throws IllegalArgumentException, IOException {
     Scanner sc = new Scanner(System.in);
     String ip = args[0];
@@ -38,7 +50,8 @@ public class ClientApp {
 
   private static void handleUDPClient(Scanner sc, String ip, int port) throws IOException {
     Client client = null;
-    //performInitialOperationsOnClient(client, ip, port, UDP);
+    // For demo of 5 PUTs, 5 GETs and 5 DELETEs plus some additional cases that I prepared.
+    performInitialOperationsOnClient(client, ip, port, UDP);
     while (true) {
       logger.info(REQUEST_FOR_INPUT);
       String request = sc.nextLine();
@@ -79,7 +92,8 @@ public class ClientApp {
     Client client;
     client = new TCPClient();
     client.createConnection(ip, port);
-    //performInitialOperationsOnClient(client, ip, port, TCP);
+    // For demo of 5 PUTs, 5 GETs and 5 DELETEs plus some additional cases that I prepared.
+    performInitialOperationsOnClient(client, ip, port, TCP);
     while (true) {
       logger.info(REQUEST_FOR_INPUT);
       String operation = sc.nextLine();

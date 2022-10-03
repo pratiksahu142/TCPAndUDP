@@ -4,6 +4,10 @@ This application contains two separate programs for implementing single-threaded
 in Java. Each of those contain TCP and UDP implementations and can work according to the user
 specified protocol.
 
+#### Github link : https://github.com/pratiksahu142/TCPAndUDP.git
+
+#### Java-docs can be found in this location `docs/index.html` in the source code
+
 Steps to run the Server program using intellij IDE :
 
 1. Add run configurations for server as below (please create one configuration each for TCP and

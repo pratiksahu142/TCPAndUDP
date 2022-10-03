@@ -2,6 +2,9 @@ package server;
 
 import java.util.HashMap;
 
+/**
+ * Represents a key-value store to be used by the client implemented using a HASHMAP.
+ */
 public class KeyValue {
 
   private final HashMap<String, String> keyValueStore;

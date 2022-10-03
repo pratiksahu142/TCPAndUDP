@@ -8,19 +8,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 /*
- * Socket(String ip, int port)
- * DataInputStream(socket)
- * DataInputStream1(System.in)
- * DataOuputStream
- * dis.readLine()
- * dos.writeUTF(String)
- * dis.close()
- * dis1.close()
- * dos.close()
- * socket.close()
+ * Represent implementation of Client in TCP protocol.
  * */
 
-public class TCPClient extends AbstractClient {
+public class TCPClient implements Client {
 
   private boolean IS_ALIVE = false;
   private Socket socket = null;
